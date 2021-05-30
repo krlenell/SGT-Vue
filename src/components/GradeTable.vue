@@ -1,6 +1,12 @@
 <template>
   <div>
-    <b-table :data="grades" :columns="columns"></b-table>
+    <b-table
+    :data="grades"
+    :columns="columns"
+    checkable
+    checkbox-position="left"
+    :checked-rows.sync="checkedRows"
+    ></b-table>
   </div>
 </template>
 
@@ -12,11 +18,12 @@ export default {
   },
   data () {
     return {
+      checkedRows: [],
       columns: [
         {
           field: 'id',
-          label: 'Number',
-          width: '40',
+          label: 'Student ID',
+          width: '30',
           numeric: true
         },
         {
