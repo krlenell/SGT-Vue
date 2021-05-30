@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <HelloWorld
-    msg="So this is how props work eh?"
-    class="column is-three-fifths is-offset-one-fifth"
-    />
+    <Header></Header>
+    <TodoTable :todos="todos"></TodoTable>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import TodoTable from './components/TodoTable.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    TodoTable
+  },
+  data () {
+    return {
+      todos: [
+        { id: 1, task: 'Get Groceries' },
+        { id: 2, task: 'Rebrand/ build this app' }
+      ]
+    }
   }
 }
 </script>
