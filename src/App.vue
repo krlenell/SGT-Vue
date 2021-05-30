@@ -4,7 +4,7 @@
     <!--<HelloWorld
     msg="So this is how props work eh?"
     />-->
-    <TodoTable todos="todos"></TodoTable>
+    <TodoTable :todos="todos"></TodoTable>
   </div>
 </template>
 

@@ -1,5 +1,7 @@
 <template>
-  <b-table :data="todos" :columns="columns"></b-table>
+  <div>
+    <b-table :data="todos" :columns="columns"></b-table>
+  </div>
 </template>
 
 <script>
