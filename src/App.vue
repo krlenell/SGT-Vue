@@ -1,25 +1,25 @@
 <template>
   <div id="app">
     <Header></Header>
-    <TodoTable :todos="todos"></TodoTable>
+    <GradeTable :grades="grades"></GradeTable>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import TodoTable from './components/TodoTable.vue'
+import GradeTable from './components/GradeTable.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    TodoTable
+    GradeTable
   },
   data () {
     return {
-      todos: [
-        { id: 1, task: 'Get Groceries' },
-        { id: 2, task: 'Rebrand/ build this app' }
+      grades: [
+        { id: 1, student: 'Ted Theodore Logan', course: 'History', grade: 100 },
+        { id: 2, student: 'Tommy Bahama', course: 'Alphabet', grade: 20 }
       ]
     }
   }

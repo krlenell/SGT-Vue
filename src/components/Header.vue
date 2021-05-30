@@ -8,14 +8,14 @@
 
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faListAlt } from '@fortawesome/free-solid-svg-icons'
+import { faClipboardList } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   name: 'Header',
   components: { FontAwesomeIcon },
   data () {
     return {
-      list: faListAlt
+      list: faClipboardList
     }
   }
 }
