@@ -18,7 +18,8 @@ export default {
   data () {
     return {
       todos: [
-        { id: 1, task: 'Get Groceries' }
+        { id: 1, task: 'Get Groceries' },
+        { id: 2, task: 'Rebrand/ build this app' }
       ]
     }
   }
