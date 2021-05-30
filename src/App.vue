@@ -1,19 +1,24 @@
 <template>
   <div id="app">
     <Header></Header>
-    <GradeTable :grades="grades"></GradeTable>
+    <div class="columns">
+      <GradeTable :grades="grades" class="column is-three-fifths"></GradeTable>
+      <GradeInputForm class="column"></GradeInputForm>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import GradeTable from './components/GradeTable.vue'
+import GradeInputForm from './components/GradeInputForm.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    GradeTable
+    GradeTable,
+    GradeInputForm
   },
   data () {
     return {
