@@ -4,7 +4,7 @@
     <!--<HelloWorld
     msg="So this is how props work eh?"
     />-->
-    <TodoTable></TodoTable>
+    <TodoTable todos="todos"></TodoTable>
   </div>
 </template>
 
@@ -19,6 +19,13 @@ export default {
     Header,
     TodoTable
     // HelloWorld
+  },
+  data () {
+    return {
+      todos: [
+        { id: 1, task: 'Get Groceries' }
+      ]
+    }
   }
 }
 </script>

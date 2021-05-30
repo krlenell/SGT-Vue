@@ -1,15 +1,15 @@
 <template>
-  <b-table :data="data" :columns="columns"></b-table>
+  <b-table :data="todos" :columns="columns"></b-table>
 </template>
 
 <script>
 export default {
   name: 'TodoTable',
+  props: {
+    todos: Array
+  },
   data () {
     return {
-      data: [
-        { id: 1, task: 'Get Groceries' }
-      ],
       columns: [
         {
           field: 'id',
