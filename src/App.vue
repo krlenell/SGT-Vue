@@ -32,11 +32,21 @@ export default {
       ]
     }
   },
+  mounted: function () {
+    // check local storage for grades array
+    // if grades array, replace
+    // else do nothing
+    console.log(localStorage)
+  },
   methods: {
     addGrade (grade) {
       grade.id = this.nextId
       this.grades.push(grade)
       this.nextId++
+      // should call syncStorage()
+    },
+    syncStorage () {
+      // when called, adds the this.grades object to localStorage
     }
   }
 }
