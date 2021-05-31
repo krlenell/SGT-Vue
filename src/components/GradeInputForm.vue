@@ -16,9 +16,18 @@
 <script>
 export default {
   name: 'GradeInputForm',
+  data () {
+    return {
+      student: '',
+      course: '',
+      grade: ''
+    }
+  },
   methods: {
     onSubmit () {
       alert('submitted')
+      console.log('student', this.student)
+      // if not filled out properly, send an alert
     }
   }
 }
