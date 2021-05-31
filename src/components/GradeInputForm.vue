@@ -1,13 +1,13 @@
 <template>
   <form @submit.prevent="onSubmit" class="box">
     <b-field label="Student">
-      <b-input v-model="student"></b-input>
+      <b-input v-model="student"/>
     </b-field>
     <b-field label="Course">
-      <b-input v-model="course"></b-input>
+      <b-input v-model="course"/>
     </b-field>
     <b-field label="Grade">
-      <b-input v-model="grade"></b-input>
+      <b-input v-model.number="grade"/>
     </b-field>
     <button class="button is-primary" type="submit">Add Student</button>
   </form>
@@ -20,14 +20,34 @@ export default {
     return {
       student: '',
       course: '',
-      grade: ''
+      grade: null
     }
   },
   methods: {
     onSubmit () {
-      alert('submitted')
-      console.log('student', this.student)
-      // if not filled out properly, send an alert
+      console.log('onSubmit ran')
+      const grade = {
+        student: this.student,
+        course: this.course,
+        grade: this.grade
+      }
+      console.log('initial grade', grade)
+      for (const key in grade) {
+        if (grade[key] === '' || grade[key] === null) {
+          alert(key + ' field is empty. Please fill it in.')
+          return
+        }
+      }
+      if (typeof grade.grade !== 'number') {
+        alert('Please enter a valid number for grade')
+        return
+      }
+      console.log('grade', grade)
+      this.$emit('grade-submitted', grade)
+
+      this.student = ''
+      this.course = ''
+      this.grade = null
     }
   }
 }
