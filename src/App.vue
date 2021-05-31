@@ -34,10 +34,8 @@ export default {
   },
   methods: {
     addGrade (grade) {
-      console.log('added grade', grade)
       grade.id = this.nextId
       this.grades.push(grade)
-      console.log('pushed grade', this.grades)
       this.nextId++
     }
   }

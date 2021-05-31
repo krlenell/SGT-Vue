@@ -25,13 +25,11 @@ export default {
   },
   methods: {
     onSubmit () {
-      console.log('onSubmit ran')
       const grade = {
         student: this.student,
         course: this.course,
         grade: this.grade
       }
-      console.log('initial grade', grade)
       for (const key in grade) {
         if (grade[key] === '' || grade[key] === null) {
           alert(key + ' field is empty. Please fill it in.')
@@ -42,7 +40,6 @@ export default {
         alert('Please enter a valid number for grade')
         return
       }
-      console.log('grade', grade)
       this.$emit('grade-submitted', grade)
 
       this.student = ''
