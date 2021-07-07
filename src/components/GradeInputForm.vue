@@ -9,18 +9,29 @@
     <b-field label="Grade">
       <b-input v-model.number="grade"/>
     </b-field>
-    <button class="button is-primary" type="submit">Add Student</button>
+    <b-button type="is-primary" native-type="submit">Add Student</b-button>
+    <b-button
+      class="delete-button"
+      type="is-danger"
+    >
+      <font-awesome-icon :icon="trash" class="trash-icon"/>Delete
+    </b-button>
   </form>
 </template>
 
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 export default {
   name: 'GradeInputForm',
+  components: { FontAwesomeIcon },
   data () {
     return {
       student: '',
       course: '',
-      grade: null
+      grade: null,
+      trash: faTrash
     }
   },
   methods: {
@@ -49,3 +60,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .delete-button{
+    margin-left: 10px;
+  }
+  .trash-icon{
+    margin-right: 3px;
+  }
+</style>
